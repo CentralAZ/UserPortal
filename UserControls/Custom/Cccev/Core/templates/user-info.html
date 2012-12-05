@@ -1,0 +1,65 @@
+<div class="heading"><h2>{{FirstName}} {{LastName}}</h2><a href="#" title="Edit" class="edit">Edit</a></div>
+<div class="avatar">
+	<img src="CachedBlob.aspx?guid={{BlobID}}&width=128" width="128" alt="{{FirstName}} {{LastName}}"/>
+	<p><a href="default.aspx?page=5348&p={{BlobID}}{{PersonID}}" title="Change your picture">Change your picture</a></p>
+</div>
+<div class="details">
+	<table>
+		<tbody>
+			{{#Age}}
+			<tr>
+				<td>Age</td>
+				<td>{{Age}}</td>
+			</tr>
+			{{/Age}}
+			{{#Gender}}
+			<tr>
+				<td>Gender</td>
+				<td>{{Gender}}</td>
+			</tr>
+			{{/Gender}}
+			<tr>
+				<td>Address</td>
+				<td>
+					{{AddressLine1}}<br />
+					{{#AddressLine2}}
+						{{AddressLine2}}<br />
+					{{/AddressLine2}}
+					{{City}}, {{State}} {{ZipCode}}
+				</td>
+			</tr>
+			<tr>
+				<td>Home Phone</td>
+				<td class="{{#IsHomeSms}}sms{{/IsHomeSms}} {{#IsHomeUnlisted}} unlisted{{/IsHomeUnlisted}}">{{HomePhone}}</td>
+			</tr>
+			<tr>
+				<td>Cell Phone</td>
+				<td class="{{#IsMobileSms}}sms{{/IsMobileSms}} {{#IsMobileUnlisted}} unlisted{{/IsMobileUnlisted}}">{{MobilePhone}}</td>
+			</tr>
+			<tr>
+				<td>Email Addresses</td>
+				<td class="emails">
+					<table id="email-addresses">
+						<tbody></tbody>
+					</table>
+					<a href="#" title="Add" class="ea-add">Add Email</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="family">
+	<h2>The {{LastName}} Family</h2>
+	<table id="family-members">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Gender</th>
+				<th>Age</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody></tbody>
+	</table>
+	<a href="#" title="Add" class="fm-add">Add Family Member</a>
+</div>

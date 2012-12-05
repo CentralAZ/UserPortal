@@ -1,0 +1,62 @@
+<fieldset class="person-details">
+	<legend>Editing your info</legend>
+	<dl>
+		<dt><label for="first-name">First Name</label></dt>
+		<dd><input type="text" id="first-name" value="{{FirstName}}" data-field="FirstName"/></dd>
+		<dt><label for="last-name">Last Name</label></dt>
+		<dd><input type="text" id="last-name" value="{{LastName}}" data-field="LastName" /></dd>
+		<dt><label for="birthdate">Birthdate</label></dt>
+		<dd><input type="text" id="birthdate" class="datepicker" value="{{DisplayDate}}" data-field="Birthdate" /></dd>
+		<dt><label for="gender">Gender</label></dt>
+		<dd>
+			<div id="gender" data-field="Gender">
+				<input type="radio" name="gender" id="male" value="Male" {{#isMale}}checked="checked"{{/isMale}}/>
+				<label for="male">Male</label>
+				<input type="radio" name="gender" id="female" value="Female" {{#isFemale}}checked="checked"{{/isFemale}}/>
+				<label for="female">Female</label>
+			</div>
+		</dd>
+		<dt><label for="address-1">Address</label></dt>
+		<dd id="address">
+			{{AddressLine1}}<br />
+			{{#AddressLine2}}
+				{{AddressLine2}}<br />
+			{{/AddressLine2}}
+			{{City}}, {{State}} {{ZipCode}}
+			{{#Campus}}
+			<div class="tool-tip">
+				<p><strong>Sorry! Can't do address updates online yet...</strong></p>
+				<p>Give us a call at the {{name}} Campus to update your address: {{phone}}
+			</div>
+			{{/Campus}}
+		</dd>
+		<dt><label for="home-phone">Home Phone</label></dt>
+		<dd>
+			<input type="text" id="home-phone" value="{{HomePhone}}" data-field="HomePhone" />
+			<div class="phone-options">
+				<input type="checkbox" id="home-unlisted" data-field="IsHomeUnlisted" {{#IsHomeUnlisted}}checked="checked"{{/IsHomeUnlisted}} />
+				<label for="home-unlisted">Unlisted</label>
+				<input type="checkbox" id="home-sms" data-field="IsHomeSms" {{#IsHomeSms}}checked="checked"{{/IsHomeSms}} />
+				<label for="home-sms">SMS</label>
+			</div>
+		</dd>
+		<dt><label for="mobile-phone">Mobile Phone</label></dt>
+		<dd>
+			<input type="text" id="mobile-phone" value="{{MobilePhone}}"/>
+			<div class="phone-options">
+				<input type="checkbox" id="mobile-unlisted" data-field="IsMobileUnlisted" {{#IsMobileUnlisted}}checked="checked"{{/IsMobileUnlisted}} />
+				<label for="mobile-unlisted">Unlisted</label>
+				<input type="checkbox" id="mobile-sms" data-field="IsMobileSms" {{#IsMobileSms}}checked="checked"{{/IsMobileSms}} />
+				<label for="mobile-sms">SMS</label>
+			</div>
+		</dd>
+	</dl>
+	<div id="campus">
+		<label>Campus</label>
+		<ul id="campus-picker" data-field="CampusID"></ul>
+	</div>
+</fieldset>
+<div class="ui-buttonset">
+	<a href="#" class="user-save buttonStyle" title="Save">Save</a>
+	<a href="#" class="cancel" title="Cancel">Cancel</a>
+</div>

@@ -1,0 +1,29 @@
+<fieldset data-id="{{PersonID}}">
+{{#PersonID}}
+	<legend>Editing {{FirstName}} {{LastName}}</legend>
+{{/PersonID}}
+{{^PersonID}}
+	<legend>Add new family member</legend>
+{{/PersonID}}
+	<dl>
+		<dt><label for="first-name">First Name</label></dt>
+		<dd><input type="text" id="first-name" value="{{FirstName}}" data-field="FirstName" /></dd>
+		<dt><label for="last-name">Last Name</label></dt>
+		<dd><input type="text" id="last-name" value="{{LastName}}" data-field="LastName" /></dd>
+		<dt><label for="birthdate">Birthdate</label></dt>
+		<dd><input type="text" id="birthdate" value="{{DisplayDate}}" class="datetime" data-field="Birthdate" /></dd>
+		<dt><label for="gender">Gender</label></dt>
+		<dd>
+			<div class="fm-gender" data=field="Gender">
+				<input type="radio" name="gender" id="male" value="Male" {{#isMale}}checked="checked"{{/isMale}}/>
+				<label for="male">Male</label>
+				<input type="radio" name="gender" id="female" value="Female" {{#isFemale}}checked="checked"{{/isFemale}}/>
+				<label for="female">Female</label>
+			</div>
+		</dd>
+	</dl>
+</fieldset>
+<div class="ui-buttonset">
+	<a href="#" class="fm-save buttonStyle" title="Save">Save</a>
+	<a href="#" class="fm-cancel" title="Cancel">Cancel</a>
+</div>

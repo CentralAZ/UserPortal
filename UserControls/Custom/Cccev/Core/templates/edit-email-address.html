@@ -1,0 +1,20 @@
+<fieldset data-id="{{EmailID}}">
+{{#EmailID}}
+	<legend>Editing '{{Address}}'</legend>
+{{/EmailID}}
+{{^EmailID}}
+	<legend>Add new email address</legend>
+{{/EmailID}}
+	<dl>
+		<dt><label for="email-address">Email Address</label></dt>
+		<dd><input type="text" id="email-address" value="{{Address}}" data-field="Address" /></dd>
+	</dl>
+	<p>
+		<input type="checkbox" id="active" {{#Active}}checked="true"{{/Active}} />
+		<label for="active">Active</label>
+	</p>
+</fieldset>
+<div class="ui-buttonset">
+	<a href="#" class="ea-save buttonStyle" title="Save">Save</a>
+	<a href="#" class="ea-cancel" title="Cancel">Cancel</a>
+</div>
