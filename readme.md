@@ -18,4 +18,9 @@ To install download the latest zip or tarball and unpack it into the Arena folde
 </script>
 ```
 
-In addition to the client side functionality, there are a couple of .dll files you'll need for the web service to work. Download the links below and include them in your Arena/bin folder. 
+In addition to the client side functionality, there are a couple of .dll files you'll need for the web service to work.
+
+1. [Cccev DataUtils](http://redmine.refreshcache.com/projects/cccevdatautils/repository)
+2. [Cccev FrameworkUtils](http://redmine.refreshcache.com/projects/cccevframeworkutils/repository)
+
+You'll want to pull these down via Subversion, build them, and drop the .dll files into your Arena/bin folder.
